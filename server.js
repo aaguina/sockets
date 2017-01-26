@@ -23,6 +23,7 @@ io.on('connection', function(socket) {
 
   socket.emit('message', {
     text: 'Welcome to the chat application!',
+    name: 'System',
     timestamp: now.format("X")
   });
 });
