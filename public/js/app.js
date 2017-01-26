@@ -1,9 +1,19 @@
 var name = getQueryVariable('name') || 'Anonymous';
-var room = getQueryVariable('room');
+var room = getQueryVariable('room') || 'Public';
 var socket = io();
+
+
+// var $roomName = jQuery('.room-title');
+// $roomName.append('Connected to chat room: ' + room + '.')
+
+jQuery('.room-title').text('Connected to chat room: ' + room + '.');
 
 socket.on('connect', function() {
   console.log('Connected to socket.io server!');
+  socket.emit('joinRoom', {
+    name: name,
+    room: room
+  });
 });
 
 socket.on('message', function(message) {
