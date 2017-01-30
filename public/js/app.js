@@ -6,7 +6,7 @@ var socket = io();
 // var $roomName = jQuery('.room-title');
 // $roomName.append('Connected to chat room: ' + room + '.')
 
-jQuery('.room-title').text('Connected to chat room: ' + room + '.');
+jQuery('.room-title').text('Chat Room: ' + room);
 
 socket.on('connect', function() {
   console.log('Connected to socket.io server!');
